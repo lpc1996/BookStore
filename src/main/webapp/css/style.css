@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#login{
+    width:246px;
+    height:400px;
+    margin: 0 auto;
+}
+
+#login_img{
+    width:246px;
+    height:200px;
+}
+
+#login_user{
+    margin-bottom: 5px;
+}
+
+#login_button{
+    margin-top:10px;
+}
+
+.login_label{
+    width:80px;
+    display: inline-block;
+}
+
+.no_display{
+    display: none;
+}
+
+.dislpay{
+    display:block;
+}
