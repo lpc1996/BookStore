@@ -6,25 +6,31 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/book_store?serverTimezone=GMT</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.username">book_user</property>
-        <property name="connection.password">asdfghjkl@</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1996</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <!--DB schema will be updated if needed-->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
+        <mapping class="entity.BookEntity"/>
+        <mapping resource="BookEntity.hbm.xml"/>
         <mapping class="entity.ContactEntity"/>
         <mapping resource="ContactEntity.hbm.xml"/>
-        <mapping resource="BookEntity.hbm.xml"/>
-        <mapping class="entity.BookEntity"/>
-        <mapping resource="StackEntity.hbm.xml"/>
-        <mapping class="entity.StackEntity"/>
         <mapping class="entity.LoginEntity"/>
         <mapping resource="LoginEntity.hbm.xml"/>
-        <mapping resource="UserEntity.hbm.xml"/>
-        <mapping class="entity.UserEntity"/>
-        <mapping resource="OrderEntity.hbm.xml"/>
         <mapping class="entity.OrderEntity"/>
+        <mapping resource="OrderEntity.hbm.xml"/>
+        <mapping class="entity.PublishEntity"/>
+        <mapping resource="PublishEntity.hbm.xml"/>
+        <mapping class="entity.StackEntity"/>
+        <mapping resource="StackEntity.hbm.xml"/>
+        <mapping class="entity.TypeEntity"/>
+        <mapping resource="TypeEntity.hbm.xml"/>
+        <mapping class="entity.UserEntity"/>
+        <mapping resource="TypeEntity.hbm.xml"/>
+        <mapping class="entity.UserEntity"/>
+        <mapping resource="UserEntity.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

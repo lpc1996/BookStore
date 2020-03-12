@@ -4,4 +4,12 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
+    <class name="entity.ContactEntity" table="contact" schema="book_store">
+        <id name="id" column="id"/>
+        <property name="userId" column="user_id"/>
+        <property name="type" column="type"/>
+        <property name="value" column="value"/>
+        <property name="location" column="location"/>
+        <property name="post" column="post"/>
+    </class>
 </hibernate-mapping>

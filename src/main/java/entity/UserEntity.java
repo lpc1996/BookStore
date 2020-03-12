@@ -1,22 +1,14 @@
 package entity;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * @author 濃霧-遠方
- */
-@Entity
-@Table(name = "user", schema = "book_store")
 public class UserEntity {
     private String id;
     private String name;
-    private String sex;
+    private Object sex;
     private Integer age;
     private Timestamp time;
 
-    @Id
-    @Column(name = "id")
     public String getId() {
         return id;
     }
@@ -25,8 +17,6 @@ public class UserEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -35,18 +25,14 @@ public class UserEntity {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "sex")
-    public String getSex() {
+    public Object getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Object sex) {
         this.sex = sex;
     }
 
-    @Basic
-    @Column(name = "age")
     public Integer getAge() {
         return age;
     }
@@ -55,8 +41,6 @@ public class UserEntity {
         this.age = age;
     }
 
-    @Basic
-    @Column(name = "time")
     public Timestamp getTime() {
         return time;
     }

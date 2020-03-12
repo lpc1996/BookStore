@@ -2,17 +2,18 @@
 <!DOCTYPE hibernate-mapping PUBLIC
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="entity">
+<hibernate-mapping>
 
     <class name="entity.BookEntity" table="book" schema="book_store">
         <id name="id" column="id"/>
         <property name="name" column="name"/>
+        <property name="typeId" column="type_id"/>
+        <property name="publishId" column="publish_id"/>
         <property name="author" column="author"/>
-        <property name="publish" column="publish"/>
-        <property name="info" column="info"/>
-        <property name="number" column="number"/>
         <property name="price" column="price"/>
-        <property name="local" column="local"/>
+        <property name="number" column="number"/>
+        <property name="stackId" column="stack_id"/>
+        <property name="location" column="location"/>
         <property name="time" column="time"/>
     </class>
 </hibernate-mapping>

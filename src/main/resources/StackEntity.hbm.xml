@@ -7,6 +7,7 @@
     <class name="entity.StackEntity" table="stack" schema="book_store">
         <id name="id" column="id"/>
         <property name="name" column="name"/>
-        <property name="admin" column="admin"/>
+        <property name="info" column="info"/>
+        <property name="adminId" column="admin_id"/>
     </class>
 </hibernate-mapping>

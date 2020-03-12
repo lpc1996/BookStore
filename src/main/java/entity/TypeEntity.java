@@ -1,10 +1,9 @@
 package entity;
 
-public class StackEntity {
+public class TypeEntity {
     private String id;
     private String name;
     private String info;
-    private String adminId;
 
     public String getId() {
         return id;
@@ -30,14 +29,6 @@ public class StackEntity {
         this.info = info;
     }
 
-    public String getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(String adminId) {
-        this.adminId = adminId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -47,7 +38,7 @@ public class StackEntity {
             return false;
         }
 
-        StackEntity that = (StackEntity) o;
+        TypeEntity that = (TypeEntity) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) {
             return false;
@@ -56,9 +47,6 @@ public class StackEntity {
             return false;
         }
         if (info != null ? !info.equals(that.info) : that.info != null) {
-            return false;
-        }
-        if (adminId != null ? !adminId.equals(that.adminId) : that.adminId != null) {
             return false;
         }
 
@@ -70,7 +58,6 @@ public class StackEntity {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (info != null ? info.hashCode() : 0);
-        result = 31 * result + (adminId != null ? adminId.hashCode() : 0);
         return result;
     }
 }

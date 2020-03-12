@@ -1,21 +1,16 @@
 package entity;
 
-import javax.persistence.*;
-import java.util.Objects;
-
 /**
  * @author 濃霧-遠方
  */
-@Entity
-@Table(name = "contact", schema = "book_store")
 public class ContactEntity {
     private int id;
     private String userId;
-    private String type;
+    private Object type;
     private String value;
+    private String location;
+    private String post;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -24,8 +19,6 @@ public class ContactEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "user_id")
     public String getUserId() {
         return userId;
     }
@@ -34,24 +27,36 @@ public class ContactEntity {
         this.userId = userId;
     }
 
-    @Basic
-    @Column(name = "type")
-    public String getType() {
+    public Object getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Object type) {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "value")
     public String getValue() {
         return value;
     }
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
     }
 
     @Override
@@ -68,13 +73,23 @@ public class ContactEntity {
         if (id != that.id) {
             return false;
         }
-        if (!Objects.equals(userId, that.userId)) {
+        if (userId != null ? !userId.equals(that.userId) : that.userId != null) {
             return false;
         }
-        if (!Objects.equals(type, that.type)) {
+        if (type != null ? !type.equals(that.type) : that.type != null) {
             return false;
         }
-        return Objects.equals(value, that.value);
+        if (value != null ? !value.equals(that.value) : that.value != null) {
+            return false;
+        }
+        if (location != null ? !location.equals(that.location) : that.location != null) {
+            return false;
+        }
+        if (post != null ? !post.equals(that.post) : that.post != null) {
+            return false;
+        }
+
+        return true;
     }
 
     @Override
@@ -83,6 +98,8 @@ public class ContactEntity {
         result = 31 * result + (userId != null ? userId.hashCode() : 0);
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (value != null ? value.hashCode() : 0);
+        result = 31 * result + (location != null ? location.hashCode() : 0);
+        result = 31 * result + (post != null ? post.hashCode() : 0);
         return result;
     }
 }

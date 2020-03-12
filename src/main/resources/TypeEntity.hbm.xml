@@ -4,11 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="entity.UserEntity" table="user" schema="book_store">
+    <class name="entity.TypeEntity" table="type" schema="book_store">
         <id name="id" column="id"/>
         <property name="name" column="name"/>
-        <property name="sex" column="sex"/>
-        <property name="age" column="age"/>
-        <property name="time" column="time"/>
+        <property name="info" column="info"/>
     </class>
 </hibernate-mapping>

@@ -1,22 +1,14 @@
 package entity;
 
-import javax.persistence.*;
-
-/**
- * @author 濃霧-遠方
- */
-@Entity
-@Table(name = "order", schema = "book_store")
 public class OrderEntity {
     private String id;
     private String userId;
     private String bookId;
+    private String adminId;
     private int number;
     private double price;
     private int contactId;
 
-    @Id
-    @Column(name = "id")
     public String getId() {
         return id;
     }
@@ -25,8 +17,6 @@ public class OrderEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "user_id")
     public String getUserId() {
         return userId;
     }
@@ -35,8 +25,6 @@ public class OrderEntity {
         this.userId = userId;
     }
 
-    @Basic
-    @Column(name = "book_id")
     public String getBookId() {
         return bookId;
     }
@@ -45,8 +33,14 @@ public class OrderEntity {
         this.bookId = bookId;
     }
 
-    @Basic
-    @Column(name = "number")
+    public String getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
+
     public int getNumber() {
         return number;
     }
@@ -55,8 +49,6 @@ public class OrderEntity {
         this.number = number;
     }
 
-    @Basic
-    @Column(name = "price")
     public double getPrice() {
         return price;
     }
@@ -65,8 +57,6 @@ public class OrderEntity {
         this.price = price;
     }
 
-    @Basic
-    @Column(name = "contact_id")
     public int getContactId() {
         return contactId;
     }
@@ -104,6 +94,9 @@ public class OrderEntity {
         if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) {
             return false;
         }
+        if (adminId != null ? !adminId.equals(that.adminId) : that.adminId != null) {
+            return false;
+        }
 
         return true;
     }
@@ -115,6 +108,7 @@ public class OrderEntity {
         result = id != null ? id.hashCode() : 0;
         result = 31 * result + (userId != null ? userId.hashCode() : 0);
         result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (adminId != null ? adminId.hashCode() : 0);
         result = 31 * result + number;
         temp = Double.doubleToLongBits(price);
         result = 31 * result + (int) (temp ^ (temp >>> 32));

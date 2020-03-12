@@ -1,16 +1,17 @@
 package entity;
 
-public class StackEntity {
-    private String id;
+public class PublishEntity {
+    private int id;
     private String name;
     private String info;
-    private String adminId;
+    private String tel;
+    private String email;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -30,12 +31,20 @@ public class StackEntity {
         this.info = info;
     }
 
-    public String getAdminId() {
-        return adminId;
+    public String getTel() {
+        return tel;
     }
 
-    public void setAdminId(String adminId) {
-        this.adminId = adminId;
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -47,9 +56,9 @@ public class StackEntity {
             return false;
         }
 
-        StackEntity that = (StackEntity) o;
+        PublishEntity that = (PublishEntity) o;
 
-        if (id != null ? !id.equals(that.id) : that.id != null) {
+        if (id != that.id) {
             return false;
         }
         if (name != null ? !name.equals(that.name) : that.name != null) {
@@ -58,7 +67,10 @@ public class StackEntity {
         if (info != null ? !info.equals(that.info) : that.info != null) {
             return false;
         }
-        if (adminId != null ? !adminId.equals(that.adminId) : that.adminId != null) {
+        if (tel != null ? !tel.equals(that.tel) : that.tel != null) {
+            return false;
+        }
+        if (email != null ? !email.equals(that.email) : that.email != null) {
             return false;
         }
 
@@ -67,10 +79,11 @@ public class StackEntity {
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
+        int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (info != null ? info.hashCode() : 0);
-        result = 31 * result + (adminId != null ? adminId.hashCode() : 0);
+        result = 31 * result + (tel != null ? tel.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 }
